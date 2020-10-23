@@ -296,10 +296,10 @@ FV3_GFS_v16beta:
     d2_bg_k1: 0.2
     d2_bg_k2: 0.0
     fv_sg_adj: 450
-    hord_dp: -5
-    hord_mt: 5
-    hord_tm: 5
-    hord_vt: 5
+    hord_dp: -6
+    hord_mt: 6 
+    hord_tm: 6
+    hord_vt: 6
     k_split: 6
     make_nh: false
     n_split: 6
