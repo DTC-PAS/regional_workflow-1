@@ -1133,7 +1133,7 @@ WTIME_MAKE_SFC_CLIMO="00:20:00"
 WTIME_GET_EXTRN_ICS="00:45:00"
 WTIME_GET_EXTRN_LBCS="00:45:00"
 WTIME_MAKE_ICS="00:30:00"
-WTIME_MAKE_LBCS="00:30:00"
+WTIME_MAKE_LBCS="01:59:00"
 WTIME_RUN_FCST="04:30:00"
 WTIME_RUN_POST="00:15:00"
 #
@@ -1199,6 +1199,14 @@ CUSTOM_POST_CONFIG_FP=""
 #
 DO_ENSEMBLE="FALSE"
 NUM_ENS_MEMBERS="1"
+#
+#-----------------------------------------------------------------------
+#
+# EAK: Set default physics options that are dependent on grid spacing
+#
+#-----------------------------------------------------------------------
+#
+CDMBGWD="[3.5,0.25]"
 #
 #-----------------------------------------------------------------------
 #

@@ -109,6 +109,10 @@ predefined domain:
     LAYOUT_Y="24"
     BLOCKSIZE="32"
 
+    if [ "$CCPP_PHYS_SUITE" = "FV3_GFS_v16beta" ]; then
+      CDMBGWD="[0.88,0.04,1.0,1.0]"
+    fi
+
     if [ "$QUILTING" = "TRUE" ]; then
       WRTCMP_write_groups="1"
       WRTCMP_write_tasks_per_group="32"
@@ -161,9 +165,13 @@ predefined domain:
     LAYOUT_Y="12"
     BLOCKSIZE="35"
 
+    if [ "$CCPP_PHYS_SUITE" = "FV3_GFS_v16beta" ]; then
+      CDMBGWD="[4.0,0.15,1.0,1.0]"
+    fi
+
     if [ "$QUILTING" = "TRUE" ]; then
       WRTCMP_write_groups="1"
-      WRTCMP_write_tasks_per_group="32"
+      WRTCMP_write_tasks_per_group="12"
       WRTCMP_output_grid="regional_latlon"
       WRTCMP_cen_lon="${ESGgrid_LON_CTR}"
       WRTCMP_cen_lat="25.0"
@@ -213,9 +221,13 @@ predefined domain:
     LAYOUT_Y="5"
     BLOCKSIZE="6"
 
+    if [ "$CCPP_PHYS_SUITE" = "FV3_GFS_v16beta" ]; then
+      CDMBGWD="[1.1,0.72,1.0,1.0]"
+    fi
+
     if [ "$QUILTING" = "TRUE" ]; then
       WRTCMP_write_groups="1"
-      WRTCMP_write_tasks_per_group="32"
+      WRTCMP_write_tasks_per_group="10"
       WRTCMP_output_grid="regional_latlon"
       WRTCMP_cen_lon="${ESGgrid_LON_CTR}"
       WRTCMP_cen_lat="25.0"
@@ -351,6 +363,10 @@ predefined domain:
     LAYOUT_Y="2"
     BLOCKSIZE="34"
 
+    if [ "$CCPP_PHYS_SUITE" = "FV3_GFS_v16beta" ]; then
+      CDMBGWD="[1.1,0.72,1.0,1.0]"
+    fi
+
     if [ "$QUILTING" = "TRUE" ]; then
       WRTCMP_write_groups="1"
       WRTCMP_write_tasks_per_group="2"
@@ -405,6 +421,10 @@ predefined domain:
     LAYOUT_Y="8"
     BLOCKSIZE="29"
 
+    if [ "$CCPP_PHYS_SUITE" = "FV3_GFS_v16beta" ]; then
+      CDMBGWD="[4.0,0.15,1.0,1.0]"
+    fi
+
     if [ "$QUILTING" = "TRUE" ]; then
       WRTCMP_write_groups="1"
       WRTCMP_write_tasks_per_group=$(( 1*LAYOUT_Y ))
@@ -458,6 +478,10 @@ predefined domain:
     LAYOUT_X="30"
     LAYOUT_Y="14"
     BLOCKSIZE="29"
+
+    if [ "$CCPP_PHYS_SUITE" = "FV3_GFS_v16beta" ]; then
+      CDMBGWD="[0.88,0.04,1.0,1.0]"
+    fi
 
     if [ "$QUILTING" = "TRUE" ]; then
       WRTCMP_write_groups="1"
