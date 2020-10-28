@@ -582,7 +582,7 @@ fi
 #-----------------------------------------------------------------------
 #
 exec_fn="NEMS.exe"
-exec_fp="${SR_WX_APP_TOP_DIR}/bin/${exec_fn}"
+exec_fp="${SR_WX_APP_TOP_DIR}/exec/${exec_fn}"
 #Check for the old build location for fv3 executable
 if [ ! -f "${exec_fp}" ]; then
   exec_fp_alt="${UFS_WTHR_MDL_DIR}/build/${exec_fn}"
@@ -885,10 +885,10 @@ you can load it in your \$PATH with one of the following commands, depending
 on your default shell:
 
 bash:
-  > export PATH=\${PATH}:/glade/p/ral/jntp/tools/rocoto/rocoto-1.3.1/bin/
+  > export PATH=\${PATH}:/glade/p/ral/jntp/tools/rocoto/rocoto-1.3.1/exec/
 
 tcsh:
-  > setenv PATH \${PATH}:/glade/p/ral/jntp/tools/rocoto/rocoto-1.3.1/bin/
+  > setenv PATH \${PATH}:/glade/p/ral/jntp/tools/rocoto/rocoto-1.3.1/exec/
 "
   ;;
 
