@@ -46,8 +46,8 @@ FV3_RRFS_v0:
     lsoil_lsm: 4
     do_deep: False
 
-FV3_RRFS_v1beta:
-  gfs_physics_nml:
+FV3_RRFS_v1beta: &rrfs_v1beta
+  gfs_physics_nml: &rrfs_v1beta_gfs_physics
     <<: *gsd_sar_phys
     lsm: 2
     lsoil_lsm: 4
@@ -57,6 +57,14 @@ FV3_RRFS_v1beta:
     do_deep: False
   atmos_model_nml:
     fdiag: 3
+
+FV3_RRFS_v1beta_cumulus:
+  <<: *rrfs_v1beta
+  gfs_physics_nml:
+    <<: *rrfs_v1beta_gfs_physics
+    do_deep: True
+    imfshalcnv: 3
+    shal_cnv: True
 
 FV3_GFS_2017_gfdlmp:
   atmos_model_nml:
@@ -278,7 +286,7 @@ FV3_GFS_v15p2:
     ldebug: False
   surf_map_nml:
 
-FV3_GFS_v16beta:
+FV3_GFS_v16beta: &gfs_v16beta
   atmos_model_nml:
     ccpp_suite: FV3_GFS_v16
     fdiag: 1
@@ -317,7 +325,7 @@ FV3_GFS_v16beta:
     sedi_transport: True
     tau_l2v: 225.0
     tau_v2l: 150.0
-  gfs_physics_nml:
+  gfs_physics_nml: &gfs_v16beta_gfs_physics
     <<: *gfs_v15_gfs_physics
     do_myjpbl: !!python/none
     do_myjsfc: !!python/none
@@ -354,6 +362,14 @@ FV3_GFS_v16beta:
     landice: True
     ldebug: False
   surf_map_nml: !!python/none
+
+FV3_GFS_v16beta_no_cumulus:
+  <<: *gfs_v16beta
+  gfs_physics_nml:
+    <<: gfs_v16beta_gfs_physics
+    do_deep: False
+    imfshalcnv: -1
+    shal_cnv: False
 
 FV3_CPT_v0:
   atmos_model_nml:
