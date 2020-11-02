@@ -281,10 +281,10 @@ FV3_GFS_v15p2:
 FV3_GFS_v16beta:
   atmos_model_nml:
     ccpp_suite: FV3_GFS_v16
-    fdiag: 3
+    fdiag: 1
     fhmax: 240
     fhmaxhf: 0
-    fhout: 3
+    fhout: 1
     fhouthf: 1
   cires_ugwp_nml:
     launch_level: 27
@@ -296,9 +296,10 @@ FV3_GFS_v16beta:
     d2_bg_k1: 0.2
     d2_bg_k2: 0.0
     fv_sg_adj: 450
-    hord_dp: -6
+    hord_dp: 6
     hord_mt: 6 
     hord_tm: 6
+    hord_tr: 10
     hord_vt: 6
     k_split: 6
     make_nh: false
@@ -318,13 +319,15 @@ FV3_GFS_v16beta:
     tau_v2l: 150.0
   gfs_physics_nml:
     <<: *gfs_v15_gfs_physics
-    cdmbgwd: [4.0, 0.15, 1.0, 1.0]
     do_myjpbl: !!python/none
     do_myjsfc: !!python/none
     do_sfcperts: !!python/none
     do_tofd: True
     do_ysu: !!python/none
     effr_in: True
+    fhlwr: 1800
+    fhswr: 1800 
+    fhzero: 1.0
     hybedmf: False
     iaer: 5111
     icliq_sw: 2
