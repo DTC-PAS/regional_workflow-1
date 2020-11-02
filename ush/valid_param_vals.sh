@@ -45,7 +45,9 @@ valid_vals_CCPP_PHYS_SUITE=( \
 "FV3_GSD_v0" \
 "FV3_GFS_v15p2" \
 "FV3_GFS_v16beta" \
+"FV3_GFS_v16beta_no_cumulus" \
 "FV3_RRFS_v1beta" \
+"FV3_RRFS_v1beta_cumulus" \
 ) 
 valid_vals_GFDLgrid_RES=("48" "96" "192" "384" "768" "1152" "3072")
 valid_vals_EXTRN_MDL_NAME_ICS=("GSMGFS" "FV3GFS" "RAPX" "HRRRX" "NAM")

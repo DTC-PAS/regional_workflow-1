@@ -525,6 +525,7 @@ cp_vrfy "${CCPP_PHYS_SUITE_IN_CCPP_FP}" "${CCPP_PHYS_SUITE_FP}"
 #
 if [ "${CCPP_PHYS_SUITE}" = "FV3_GSD_v0" ] || \
    [ "${CCPP_PHYS_SUITE}" = "FV3_RRFS_v1beta" ] || \
+   [ "${CCPP_PHYS_SUITE}" = "FV3_RRFS_v1beta_cumulus" ] || \
    [ "${CCPP_PHYS_SUITE}" = "FV3_GSD_SAR" ]; then
   print_info_msg "$VERBOSE" "
 Copying the fixed file containing cloud condensation nuclei (CCN) data
