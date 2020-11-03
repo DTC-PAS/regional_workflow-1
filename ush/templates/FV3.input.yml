@@ -49,12 +49,12 @@ FV3_RRFS_v0:
 FV3_RRFS_v1beta: &rrfs_v1beta
   gfs_physics_nml: &rrfs_v1beta_gfs_physics
     <<: *gsd_sar_phys
-    lsm: 2
-    lsoil_lsm: 4
-    imfshalcnv: -1
-    IMFDEEPCNV: -1
-    DO_MYNNSFCLAY: true
     do_deep: False
+    do_mynnsfclay: true
+    imfdeepcnv: -1
+    imfshalcnv: -1
+    lsoil_lsm: 4
+    lsm: 2
   atmos_model_nml:
     fdiag: 3
 
@@ -63,6 +63,7 @@ FV3_RRFS_v1beta_cumulus:
   gfs_physics_nml:
     <<: *rrfs_v1beta_gfs_physics
     do_deep: True
+    imfdeepcnv: 3
     imfshalcnv: 3
     shal_cnv: True
 
@@ -366,8 +367,9 @@ FV3_GFS_v16beta: &gfs_v16beta
 FV3_GFS_v16beta_no_cumulus:
   <<: *gfs_v16beta
   gfs_physics_nml:
-    <<: gfs_v16beta_gfs_physics
+    <<: *gfs_v16beta_gfs_physics
     do_deep: False
+    imfdeepcnv: -1
     imfshalcnv: -1
     shal_cnv: False
 
