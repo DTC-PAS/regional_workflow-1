@@ -109,9 +109,7 @@ predefined domain:
     LAYOUT_Y="24"
     BLOCKSIZE="32"
 
-    if [ "$CCPP_PHYS_SUITE" = "FV3_GFS_v16beta" ]; then
-      CDMBGWD="[0.88,0.04,1.0,1.0]"
-    fi
+    CDMBGWD="[0.88,0.04,1.0,1.0]"
 
     if [ "$QUILTING" = "TRUE" ]; then
       WRTCMP_write_groups="1"
@@ -165,9 +163,7 @@ predefined domain:
     LAYOUT_Y="12"
     BLOCKSIZE="35"
 
-    if [ "$CCPP_PHYS_SUITE" = "FV3_GFS_v16beta" ]; then
-      CDMBGWD="[4.0,0.15,1.0,1.0]"
-    fi
+    CDMBGWD="[4.0,0.15,1.0,1.0]"
 
     if [ "$QUILTING" = "TRUE" ]; then
       WRTCMP_write_groups="1"
@@ -221,9 +217,7 @@ predefined domain:
     LAYOUT_Y="5"
     BLOCKSIZE="6"
 
-    if [ "$CCPP_PHYS_SUITE" = "FV3_GFS_v16beta" ]; then
-      CDMBGWD="[1.1,0.72,1.0,1.0]"
-    fi
+    CDMBGWD="[1.1,0.72,1.0,1.0]"
 
     if [ "$QUILTING" = "TRUE" ]; then
       WRTCMP_write_groups="1"
@@ -363,9 +357,7 @@ predefined domain:
     LAYOUT_Y="2"
     BLOCKSIZE="34"
 
-    if [ "$CCPP_PHYS_SUITE" = "FV3_GFS_v16beta" ]; then
-      CDMBGWD="[1.1,0.72,1.0,1.0]"
-    fi
+    CDMBGWD="[1.1,0.72,1.0,1.0]"
 
     if [ "$QUILTING" = "TRUE" ]; then
       WRTCMP_write_groups="1"
@@ -421,9 +413,7 @@ predefined domain:
     LAYOUT_Y="8"
     BLOCKSIZE="29"
 
-    if [ "$CCPP_PHYS_SUITE" = "FV3_GFS_v16beta" ]; then
-      CDMBGWD="[4.0,0.15,1.0,1.0]"
-    fi
+    CDMBGWD="[4.0,0.15,1.0,1.0]"
 
     if [ "$QUILTING" = "TRUE" ]; then
       WRTCMP_write_groups="1"
@@ -479,9 +469,7 @@ predefined domain:
     LAYOUT_Y="14"
     BLOCKSIZE="29"
 
-    if [ "$CCPP_PHYS_SUITE" = "FV3_GFS_v16beta" ]; then
-      CDMBGWD="[0.88,0.04,1.0,1.0]"
-    fi
+    CDMBGWD="[0.88,0.04,1.0,1.0]"
 
     if [ "$QUILTING" = "TRUE" ]; then
       WRTCMP_write_groups="1"
