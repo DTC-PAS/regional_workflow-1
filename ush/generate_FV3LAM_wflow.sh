@@ -583,7 +583,7 @@ fi
 #-----------------------------------------------------------------------
 #
 exec_fn="NEMS.exe"
-exec_fp="${SR_WX_APP_TOP_DIR}/exec/${exec_fn}"
+exec_fp="${SR_WX_APP_TOP_DIR}/bin/${exec_fn}"
 #Check for the old build location for fv3 executable
 if [ ! -f "${exec_fp}" ]; then
   exec_fp_alt="${UFS_WTHR_MDL_DIR}/build/${exec_fn}"
