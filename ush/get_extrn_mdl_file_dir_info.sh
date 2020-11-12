@@ -753,17 +753,17 @@ has not been specified for this external model:
   "FV3GFS")
     if [ "${fv3gfs_file_fmt}" = "nemsio" ]; then
 
-      if [ "${cdate_FV3LAM}" -lt "2019061200" ]; then                    
+      if [ "${cdate_FV3LAM}" -lt "2019061200" ]; then
         arcv_dir="/NCEPDEV/emc-global/5year/emc.glopara/WCOSS_C/Q2FY19/prfv3rt3/${cdate_FV3LAM}"
-        arcv_fns=""                                                      
-      elif [ "${cdate_FV3LAM}" -ge "2019061200" ] && \                   
-           [ "${cdate_FV3LAM}" -lt "2020022600" ]; then                  
+        arcv_fns=""
+      elif [ "${cdate_FV3LAM}" -ge "2019061200" ] && \
+           [ "${cdate_FV3LAM}" -lt "2020022600" ]; then
         arcv_dir="/NCEPPROD/hpssprod/runhistory/rh${yyyy}/${yyyy}${mm}/${yyyymmdd}"
         arcv_fns="gpfs_dell1_nco_ops_com_gfs_prod_gfs.${yyyymmdd}_${hh}."
-      elif [ "${cdate_FV3LAM}" -ge "2020022600" ]; then                  
+      elif [ "${cdate_FV3LAM}" -ge "2020022600" ]; then
         arcv_dir="/NCEPPROD/hpssprod/runhistory/rh${yyyy}/${yyyy}${mm}/${yyyymmdd}"
-        arcv_fns="com_gfs_prod_gfs.${yyyymmdd}_${hh}."                   
-      fi                                                                 
+        arcv_fns="com_gfs_prod_gfs.${yyyymmdd}_${hh}."
+      fi
       arcv_fmt="tar"
       if [ "${anl_or_fcst}" = "ANL" ]; then
         arcv_fns="${arcv_fns}gfs_nemsioa"
@@ -788,7 +788,7 @@ has not been specified for this external model:
       arcv_fns="gpfs_dell1_nco_ops_com_gfs_prod_gfs.${yyyymmdd}_${hh}.gfs_pgrb2"
       arcv_fmt="tar"
       arcvrel_dir="./gfs.${yyyymmdd}/${hh}"
-  
+
     fi
 
     is_array arcv_fns
