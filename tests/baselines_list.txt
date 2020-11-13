@@ -39,6 +39,7 @@ regional_002
 suite_FV3_CPT_v0
 suite_FV3_GFS_v15p2
 suite_FV3_GFS_v16beta
+suite_FV3_GFS_v16beta_Hurr_Laura
 suite_FV3_GFS_v16beta_no_cumulus
 suite_FV3_GSD_SAR
 suite_FV3_GSD_v0
