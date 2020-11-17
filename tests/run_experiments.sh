@@ -1,4 +1,4 @@
-#!/bin/bash -l
+#!/bin/bash 
 
 #
 #-----------------------------------------------------------------------
@@ -706,6 +706,8 @@ PTMP=\"${PTMP}\""
       extrn_mdl_source_basedir="/mnt/lfs1/BMC/fim/Gerard.Ketefian/UFS_CAM/staged_extrn_mdl_files"
     elif [ "$MACHINE" = "CHEYENNE" ]; then
       extrn_mdl_source_basedir="/glade/p/ral/jntp/UFS_CAM/staged_extrn_mdl_files"
+    elif [ "$MACHINE" = "ORION" ]; then
+      extrn_mdl_source_basedir="/work/noaa/gsd-fv3-dev/gsketefia/UFS/staged_extrn_mdl_files"
     else
       print_err_msg_exit "\
 The base directory (extrn_mdl_source_basedir) in which the user-staged
@@ -717,7 +719,11 @@ machine (MACHINE):
     EXTRN_MDL_SOURCE_BASEDIR_ICS="${extrn_mdl_source_basedir}/${EXTRN_MDL_NAME_ICS}"
     if [ "${EXTRN_MDL_NAME_ICS}" = "FV3GFS" ] || \
        [ "${EXTRN_MDL_NAME_ICS}" = "GSMGFS" ]; then
-      EXTRN_MDL_FILES_ICS=( "gfs.atmanl.nemsio" "gfs.sfcanl.nemsio" )
+      if [ "${FV3GFS_FILE_FMT_ICS}" = "nemsio" ]; then
+        EXTRN_MDL_FILES_ICS=( "gfs.atmanl.nemsio" "gfs.sfcanl.nemsio" )
+      elif [ "${FV3GFS_FILE_FMT_ICS}" = "grib2" ]; then
+        EXTRN_MDL_FILES_ICS=( "gfs.pgrb2.0p25.f000" )
+      fi
     elif [ "${EXTRN_MDL_NAME_ICS}" = "HRRRX" ] || \
          [ "${EXTRN_MDL_NAME_ICS}" = "RAPX" ]; then
       EXTRN_MDL_FILES_ICS=( "${EXTRN_MDL_NAME_ICS,,}.out.for_f000" )
@@ -742,8 +748,12 @@ boundary conditions specification interval (LBC_SPEC_INTVL_HRS):
     EXTRN_MDL_FILES_LBCS=( $( printf "%03d " "${lbc_spec_times_hrs[@]}" ) ) 
     if [ "${EXTRN_MDL_NAME_LBCS}" = "FV3GFS" ] || \
        [ "${EXTRN_MDL_NAME_LBCS}" = "GSMGFS" ]; then
-      EXTRN_MDL_FILES_LBCS=( "${EXTRN_MDL_FILES_LBCS[@]/#/gfs.atmf}" )
-      EXTRN_MDL_FILES_LBCS=( "${EXTRN_MDL_FILES_LBCS[@]/%/.nemsio}" )
+      if [ "${FV3GFS_FILE_FMT_LBCS}" = "nemsio" ]; then
+        EXTRN_MDL_FILES_LBCS=( "${EXTRN_MDL_FILES_LBCS[@]/#/gfs.atmf}" )
+        EXTRN_MDL_FILES_LBCS=( "${EXTRN_MDL_FILES_LBCS[@]/%/.nemsio}" )
+      elif [ "${FV3GFS_FILE_FMT_LBCS}" = "grib2" ]; then
+        EXTRN_MDL_FILES_LBCS=( "${EXTRN_MDL_FILES_LBCS[@]/#/gfs.pgrb2.0p25.f}" )
+      fi
     elif [ "${EXTRN_MDL_NAME_LBCS}" = "HRRRX" ] || \
          [ "${EXTRN_MDL_NAME_LBCS}" = "RAPX" ]; then
       EXTRN_MDL_FILES_LBCS=( "${EXTRN_MDL_FILES_LBCS[@]/#/${EXTRN_MDL_NAME_LBCS,,}.out.for_f}" )
