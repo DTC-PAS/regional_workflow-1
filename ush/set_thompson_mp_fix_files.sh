@@ -122,15 +122,15 @@ string."
       "qr_acr_qg.dat" \
       "qr_acr_qs.dat" \
       )
-   
+
     if [ "${EXTRN_MDL_NAME_ICS}" != "HRRRX" -a "${EXTRN_MDL_NAME_ICS}" != "RAPX" ] || \
        [ "${EXTRN_MDL_NAME_LBCS}" != "HRRRX" -a "${EXTRN_MDL_NAME_LBCS}" != "RAPX" ]; then
       thompson_mp_fix_files+=( "Thompson_MP_MONTHLY_CLIMO.nc" )
-    fi  
+    fi
 
     FIXgsm_FILES_TO_COPY_TO_FIXam+=( "${thompson_mp_fix_files[@]}" )
 
-    num_files=${#thompson_mp_fix_files[@]} 
+    num_files=${#thompson_mp_fix_files[@]}
     for (( i=0; i<${num_files}; i++ )); do
       mapping="${thompson_mp_fix_files[i]} | ${thompson_mp_fix_files[i]}"
       CYCLEDIR_LINKS_TO_FIXam_FILES_MAPPING+=( "${mapping}" )
