@@ -560,6 +560,9 @@ bination of external model (extrn_mdl_name) and analysis or forecast
     "HERA")
       sysdir=""
       ;;
+    "ORION")
+      sysdir="$sysbasedir"
+      ;;
     "JET")
       sysdir=""
       ;;
@@ -593,6 +596,9 @@ has not been specified for this external model and machine combination:
       ;;
     "HERA")
       sysdir="$sysbasedir/gfs.${yyyymmdd}/${hh}"
+      ;;
+    "ORION")
+      sysdir="$sysbasedir"
       ;;
     "JET")
       sysdir="$sysbasedir"
@@ -628,6 +634,9 @@ has not been specified for this external model and machine combination:
     "HERA")
       sysdir="$sysbasedir"
       ;;
+    "ORION")
+      sysdir="$sysbasedir"
+      ;;
     "JET")
       sysdir="$sysbasedir/${yyyymmdd}${hh}/postprd"
       ;;
@@ -659,6 +668,9 @@ has not been specified for this external model and machine combination:
     "HERA")
       sysdir="$sysbasedir"
       ;;
+    "ORION")
+      sysdir="$sysbasedir"
+      ;;
     "JET")
       sysdir="$sysbasedir/${yyyymmdd}${hh}/postprd"
       ;;
@@ -687,6 +699,9 @@ has not been specified for this external model and machine combination:
       sysdir="$sysbasedir"
       ;;
     "HERA")
+      sysdir="$sysbasedir"
+      ;;
+    "ORION")
       sysdir="$sysbasedir"
       ;;
     "JET")
@@ -751,23 +766,23 @@ has not been specified for this external model:
     ;;
 
   "FV3GFS")
-    if [ "${fv3gfs_file_fmt}" = "nemsio" ]; then
 
-      if [ "${cdate_FV3LAM}" -lt "2019061200" ]; then
-        arcv_dir="/NCEPDEV/emc-global/5year/emc.glopara/WCOSS_C/Q2FY19/prfv3rt3/${cdate_FV3LAM}"
-        arcv_fns=""
-      elif [ "${cdate_FV3LAM}" -ge "2019061200" ] && \
-           [ "${cdate_FV3LAM}" -lt "2020022600" ]; then
-        arcv_dir="/NCEPPROD/hpssprod/runhistory/rh${yyyy}/${yyyy}${mm}/${yyyymmdd}"
-        arcv_fns="gpfs_dell1_nco_ops_com_gfs_prod_gfs.${yyyymmdd}_${hh}."
-      elif [ "${cdate_FV3LAM}" -ge "2020022600" ]; then
-        arcv_dir="/NCEPPROD/hpssprod/runhistory/rh${yyyy}/${yyyy}${mm}/${yyyymmdd}"
-        arcv_fns="com_gfs_prod_gfs.${yyyymmdd}_${hh}."
-      fi
-      arcv_fmt="tar"
+    if [ "${cdate_FV3LAM}" -lt "2019061200" ]; then
+      arcv_dir="/NCEPDEV/emc-global/5year/emc.glopara/WCOSS_C/Q2FY19/prfv3rt3/${cdate_FV3LAM}"
+      arcv_fns=""
+    elif [ "${cdate_FV3LAM}" -ge "2019061200" ] && \
+         [ "${cdate_FV3LAM}" -lt "2020022600" ]; then
+      arcv_dir="/NCEPPROD/hpssprod/runhistory/rh${yyyy}/${yyyy}${mm}/${yyyymmdd}"
+      arcv_fns="gpfs_dell1_nco_ops_com_gfs_prod_gfs.${yyyymmdd}_${hh}."
+    elif [ "${cdate_FV3LAM}" -ge "2020022600" ]; then
+      arcv_dir="/NCEPPROD/hpssprod/runhistory/rh${yyyy}/${yyyy}${mm}/${yyyymmdd}"
+      arcv_fns="com_gfs_prod_gfs.${yyyymmdd}_${hh}."
+    fi
+
+    if [ "${fv3gfs_file_fmt}" = "nemsio" ]; then
+ 
       if [ "${anl_or_fcst}" = "ANL" ]; then
         arcv_fns="${arcv_fns}gfs_nemsioa"
-        arcvrel_dir="./gfs.${yyyymmdd}/${hh}"
       elif [ "${anl_or_fcst}" = "FCST" ]; then
         last_fhr_in_nemsioa="39"
         first_lbc_fhr="${lbc_spec_fhrs[0]}"
@@ -779,17 +794,16 @@ has not been specified for this external model:
         else
           arcv_fns=( "${arcv_fns}gfs_nemsioa" "${arcv_fns}gfs_nemsiob" )
         fi
-        arcvrel_dir="./gfs.${yyyymmdd}/${hh}"
       fi
 
     elif [ "${fv3gfs_file_fmt}" = "grib2" ]; then
 
-      arcv_dir="/NCEPPROD/hpssprod/runhistory/rh${yyyy}/${yyyy}${mm}/${yyyymmdd}"
-      arcv_fns="gpfs_dell1_nco_ops_com_gfs_prod_gfs.${yyyymmdd}_${hh}.gfs_pgrb2"
-      arcv_fmt="tar"
-      arcvrel_dir="./gfs.${yyyymmdd}/${hh}"
-
+      arcv_fns="${arcv_fns}gfs_pgrb2"
+  
     fi
+
+    arcv_fmt="tar"
+    arcvrel_dir="./gfs.${yyyymmdd}/${hh}"
 
     is_array arcv_fns
     if [ "$?" = "0" ]; then
