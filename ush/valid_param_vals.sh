@@ -46,6 +46,8 @@ valid_vals_CCPP_PHYS_SUITE=( \
 "FV3_GFS_v15p2" \
 "FV3_GFS_v16beta" \
 "FV3_GFS_v16beta_no_cumulus" \
+"FV3_RRFS_v1alpha" \
+"FV3_RRFS_v1alpha_cumulus" \
 "FV3_RRFS_v1beta" \
 "FV3_RRFS_v1beta_cumulus" \
 ) 

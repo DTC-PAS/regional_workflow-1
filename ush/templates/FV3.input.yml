@@ -50,7 +50,7 @@ FV3_RRFS_v1beta: &rrfs_v1beta
   gfs_physics_nml: &rrfs_v1beta_gfs_physics
     <<: *gsd_sar_phys
     do_deep: False
-    do_mynnsfclay: true
+    do_mynnsfclay: True
     imfdeepcnv: -1
     imfshalcnv: -1
     lsoil_lsm: 4
@@ -58,14 +58,26 @@ FV3_RRFS_v1beta: &rrfs_v1beta
   atmos_model_nml:
     fdiag: 3
 
-FV3_RRFS_v1beta_cumulus:
+FV3_RRFS_v1beta_cumulus: &rrfs_v1beta_cumulus
   <<: *rrfs_v1beta
-  gfs_physics_nml:
+  gfs_physics_nml: &rrfs_v1beta_cumulus_gfs_physics
     <<: *rrfs_v1beta_gfs_physics
     do_deep: True
     imfdeepcnv: 3
     imfshalcnv: 3
     shal_cnv: True
+
+FV3_RRFS_v1alpha:
+  <<: *rrfs_v1beta
+  gfs_physics_nml:
+    <<: *rrfs_v1beta_gfs_physics
+    do_mynnsfclay: False
+
+FV3_RRFS_v1alpha_cumulus:
+  <<: *rrfs_v1beta_cumulus
+  gfs_physics_nml:
+    <<: *rrfs_v1beta_cumulus_gfs_physics
+    do_mynnsfclay: False
 
 FV3_GFS_2017_gfdlmp:
   atmos_model_nml:

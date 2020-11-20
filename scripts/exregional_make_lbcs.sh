@@ -109,12 +109,15 @@ case "${CCPP_PHYS_SUITE}" in
   varmap_file="GFSphys_var_map.txt"
   ;;
 "FV3_GSD_v0" | "FV3_GSD_SAR" | \
+"FV3_RRFS_v1alpha" | "FV3_RRFS_v1alpha_cumulus" | \
 "FV3_RRFS_v1beta" | "FV3_RRFS_v1beta_cumulus" )
-  if   [ "${EXTRN_MDL_NAME_LBCS}" = "RAPX" ] || [ "${EXTRN_MDL_NAME_LBCS}" = "HRRRX" ]; then
-      varmap_file="GSDphys_var_map.txt"
-  elif [ "${EXTRN_MDL_NAME_LBCS}" = "NAM" ] || [ "${EXTRN_MDL_NAME_LBCS}" = "FV3GFS" ] || \
+  if [ "${EXTRN_MDL_NAME_LBCS}" = "RAPX" ] || \
+     [ "${EXTRN_MDL_NAME_LBCS}" = "HRRRX" ]; then
+    varmap_file="GSDphys_var_map.txt"
+  elif [ "${EXTRN_MDL_NAME_LBCS}" = "NAM" ] || \
+       [ "${EXTRN_MDL_NAME_LBCS}" = "FV3GFS" ] || \
        [ "${EXTRN_MDL_NAME_LBCS}" = "GSMGFS" ]; then
-      varmap_file="GFSphys_var_map.txt"
+    varmap_file="GFSphys_var_map.txt"
   fi
   ;;
 *)
@@ -240,12 +243,14 @@ case "${EXTRN_MDL_NAME_LBCS}" in
      [ "${CCPP_PHYS_SUITE}" = "FV3_GFS_v15p2" ] || \
      [ "${CCPP_PHYS_SUITE}" = "FV3_GFS_v16beta" ] || \
      [ "${CCPP_PHYS_SUITE}" = "FV3_GFS_v16beta_no_cumulus" ]; then
-     thomp_mp_climo_file=""
+    thomp_mp_climo_file=""
   elif [ "${CCPP_PHYS_SUITE}" = "FV3_GSD_v0" ] || \
+       [ "${CCPP_PHYS_SUITE}" = "FV3_GSD_SAR" ] || \
+       [ "${CCPP_PHYS_SUITE}" = "FV3_RRFS_v1alpha" ] || \
+       [ "${CCPP_PHYS_SUITE}" = "FV3_RRFS_v1alpha_cumulus" ] || \
        [ "${CCPP_PHYS_SUITE}" = "FV3_RRFS_v1beta" ] || \
-       [ "${CCPP_PHYS_SUITE}" = "FV3_RRFS_v1beta_cumulus" ] || \
-       [ "${CCPP_PHYS_SUITE}" = "FV3_GSD_SAR" ]; then
-     thomp_mp_climo_file="${FIXam}/Thompson_MP_MONTHLY_CLIMO.nc"
+       [ "${CCPP_PHYS_SUITE}" = "FV3_RRFS_v1beta_cumulus" ]; then
+    thomp_mp_climo_file="${FIXam}/Thompson_MP_MONTHLY_CLIMO.nc"
   else
     print_err_msg_exit "\
     The chosen CCPP physics suite is unsupported at this time:
@@ -267,12 +272,14 @@ case "${EXTRN_MDL_NAME_LBCS}" in
      [ "${CCPP_PHYS_SUITE}" = "FV3_GFS_v15p2" ] || \
      [ "${CCPP_PHYS_SUITE}" = "FV3_GFS_v16beta" ] || \
      [ "${CCPP_PHYS_SUITE}" = "FV3_GFS_v16beta_no_cumulus" ]; then
-     thomp_mp_climo_file=""
+    thomp_mp_climo_file=""
   elif [ "${CCPP_PHYS_SUITE}" = "FV3_GSD_v0" ] || \
+       [ "${CCPP_PHYS_SUITE}" = "FV3_GSD_SAR" ] || \
+       [ "${CCPP_PHYS_SUITE}" = "FV3_RRFS_v1alpha" ] || \
+       [ "${CCPP_PHYS_SUITE}" = "FV3_RRFS_v1alpha_cumulus" ] || \
        [ "${CCPP_PHYS_SUITE}" = "FV3_RRFS_v1beta" ] || \
-       [ "${CCPP_PHYS_SUITE}" = "FV3_RRFS_v1beta_cumulus" ] || \
-       [ "${CCPP_PHYS_SUITE}" = "FV3_GSD_SAR" ]; then
-     thomp_mp_climo_file="${FIXam}/Thompson_MP_MONTHLY_CLIMO.nc"
+       [ "${CCPP_PHYS_SUITE}" = "FV3_RRFS_v1beta_cumulus" ]; then
+    thomp_mp_climo_file="${FIXam}/Thompson_MP_MONTHLY_CLIMO.nc"
   else
     print_err_msg_exit "\
     The chosen CCPP physics suite is unsupported at this time:
@@ -321,12 +328,14 @@ case "${EXTRN_MDL_NAME_LBCS}" in
      [ "${CCPP_PHYS_SUITE}" = "FV3_GFS_v15p2" ] || \
      [ "${CCPP_PHYS_SUITE}" = "FV3_GFS_v16beta" ] || \
      [ "${CCPP_PHYS_SUITE}" = "FV3_GFS_v16beta_no_cumulus" ]; then
-     thomp_mp_climo_file=""
+    thomp_mp_climo_file=""
   elif [ "${CCPP_PHYS_SUITE}" = "FV3_GSD_v0" ] || \
+       [ "${CCPP_PHYS_SUITE}" = "FV3_GSD_SAR" ] || \
+       [ "${CCPP_PHYS_SUITE}" = "FV3_RRFS_v1alpha" ] || \
+       [ "${CCPP_PHYS_SUITE}" = "FV3_RRFS_v1alpha_cumulus" ] || \
        [ "${CCPP_PHYS_SUITE}" = "FV3_RRFS_v1beta" ] || \
-       [ "${CCPP_PHYS_SUITE}" = "FV3_RRFS_v1beta_cumulus" ] || \
-       [ "${CCPP_PHYS_SUITE}" = "FV3_GSD_SAR" ]; then
-     thomp_mp_climo_file="${FIXam}/Thompson_MP_MONTHLY_CLIMO.nc"
+       [ "${CCPP_PHYS_SUITE}" = "FV3_RRFS_v1beta_cumulus" ]; then
+    thomp_mp_climo_file="${FIXam}/Thompson_MP_MONTHLY_CLIMO.nc"
   else
     print_err_msg_exit "\
     The chosen CCPP physics suite is unsupported at this time:
