@@ -423,10 +423,10 @@ predefined domain:
       WRTCMP_cen_lat="${ESGgrid_LAT_CTR}"
       WRTCMP_stdlat1="${ESGgrid_LAT_CTR}"
       WRTCMP_stdlat2="${ESGgrid_LAT_CTR}"
-      WRTCMP_nx="397"
+      WRTCMP_nx="393"
       WRTCMP_ny="225"
-      WRTCMP_lon_lwr_left="-121.93788248"
-      WRTCMP_lat_lwr_left="22.51531359"
+      WRTCMP_lon_lwr_left="-121.70231097"
+      WRTCMP_lat_lwr_left="22.57417972"
       WRTCMP_dx="${ESGgrid_DELX}"
       WRTCMP_dy="${ESGgrid_DELY}"
     fi
