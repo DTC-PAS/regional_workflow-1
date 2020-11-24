@@ -402,14 +402,14 @@ predefined domain:
     ESGgrid_DELX="13000.0"
     ESGgrid_DELY="13000.0"
 
-    ESGgrid_NX=400
+    ESGgrid_NX=396
     ESGgrid_NY=232
 
     ESGgrid_WIDE_HALO_WIDTH=6
 
     DT_ATMOS="180"
 
-    LAYOUT_X="16"
+    LAYOUT_X="18"
     LAYOUT_Y="8"
     BLOCKSIZE="29"
 
