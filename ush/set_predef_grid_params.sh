@@ -351,7 +351,7 @@ predefined domain:
 
     ESGgrid_WIDE_HALO_WIDTH=6
 
-    DT_ATMOS="300"
+    DT_ATMOS="40"
 
     LAYOUT_X="6"
     LAYOUT_Y="2"
@@ -407,7 +407,7 @@ predefined domain:
 
     ESGgrid_WIDE_HALO_WIDTH=6
 
-    DT_ATMOS="180"
+    DT_ATMOS="40"
 
     LAYOUT_X="18"
     LAYOUT_Y="8"
