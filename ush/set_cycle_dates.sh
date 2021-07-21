@@ -54,6 +54,7 @@ function set_cycle_dates() {
 "date_start" \
 "date_end" \
 "cycle_hrs" \
+"cycle_freq" \
 "output_varname_all_cdates" \
   )
   process_args valid_args "$@"
@@ -92,13 +93,13 @@ End date (date_end) must be at or after start date (date_start):
 #-----------------------------------------------------------------------
 #
 # In the following "while" loop, we begin with the starting date and 
-# increment by 1 day each time through the loop until we reach the ending
-# date.  For each date, we obtain an intermediate array of cdates (whose
-# elements have the format YYYYMMDDHH) by prepending to the elements of 
-# cycle_hrs the current date.  (Thus, this array has the same number of
-# elements as cycle_hrs.)  We then append this intermediate array to the 
-# final array that will contain all cdates (i.e. over all days and cycle
-# hours).
+# increment by cycle_freq hours each time through the loop until we reach 
+# the ending date.  For each date, we obtain an intermediate array of 
+# cdates (whose elements have the format YYYYMMDDHH) by prepending to the 
+# elements of cycle_hrs the current date.  (Thus, this array has the same 
+# number of elements as cycle_hrs.)  We then append this intermediate 
+# array to the final array that will contain all cdates (i.e. over all
+# days and cycle hours).
 #
 #-----------------------------------------------------------------------
 #
@@ -106,7 +107,7 @@ End date (date_end) must be at or after start date (date_start):
   date_crnt="${date_start}"
   while [ "${date_crnt}" -le "${date_end}" ]; do
     all_cdates+=( $( printf "%s " ${cycle_hrs[@]/#/${date_crnt}} ) )
-    date_crnt=$( date -d "${date_crnt} + 1 days" +%Y%m%d )
+    date_crnt=$( date -d "${date_crnt} + ${cycle_freq} hours" +%Y%m%d )
   done
 #
 #-----------------------------------------------------------------------

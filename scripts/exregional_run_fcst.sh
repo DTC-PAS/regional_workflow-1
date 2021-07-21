@@ -492,6 +492,7 @@ create_model_configure_file \
   cdate="$cdate" \
   nthreads=${OMP_NUM_THREADS} \
   run_dir="${run_dir}" \
+  output_interval="${OUTPUT_FREQ}" \
   sub_hourly_post="${SUB_HOURLY_POST}" \
   dt_subhourly_post_mnts="${DT_SUBHOURLY_POST_MNTS}" \
   dt_atmos="${DT_ATMOS}" || print_err_msg_exit "\

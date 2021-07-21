@@ -377,15 +377,27 @@ WFLOW_LAUNCH_LOG_FN="log.launch_FV3LAM_wflow"
 # two-digit string representing an integer that is less than or equal to
 # 23, e.g. "00", "03", "12", "23".
 #
+# CYCL_FREQ:
+# The interval between each date's forecast cycles, in integer hours. It 
+# should be evenly divisible by 24.  If it is set to 24, forecasts will 
+# be launched on each date from DATE_FIRST_CYCL to DATE_LAST_CYCL, 
+# inclusive, at the hours specified by CYCL_HRS.  If it is set to 48, 
+# forecasts will be launched every other date, and so on.
+#
 # FCST_LEN_HRS:
 # The length of each forecast, in integer hours.
 #
+# OUTPUT_FREQ:
+# The frequency of forecast output, in integer hours.
+# 
 #-----------------------------------------------------------------------
 #
 DATE_FIRST_CYCL="YYYYMMDD"
 DATE_LAST_CYCL="YYYYMMDD"
 CYCL_HRS=( "HH1" "HH2" )
+CYCL_FREQ="24"
 FCST_LEN_HRS="24"
+OUTPUT_FREQ="1"
 #
 #-----------------------------------------------------------------------
 #

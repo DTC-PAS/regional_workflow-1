@@ -556,7 +556,7 @@ code inside the <task> tag to be identical to the case in which subhourly
 post-processing is performed (i.e. the case in which the minutes are not 
 always zero).
 -->
-    <var name="fhr">{% for h in range(0, fcst_len_hrs+1) %}{{ " %03d" % h }}{% endfor %}</var>
+    <var name="fhr">{% for h in range(0, fcst_len_hrs+1, output_freq) %}{{ " %03d" % h }}{% endfor %}</var>
       <task name="&RUN_POST_TN;{{ uscore_ensmem_name }}_f#fhr#" maxtries="{{ maxtries_run_post }}">
   {%- endif %}
 

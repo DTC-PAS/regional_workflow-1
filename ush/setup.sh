@@ -774,6 +774,7 @@ set_cycle_dates \
   date_start="${DATE_FIRST_CYCL}" \
   date_end="${DATE_LAST_CYCL}" \
   cycle_hrs="${CYCL_HRS_str}" \
+  cycle_freq="${CYCL_FREQ}" \
   output_varname_all_cdates="ALL_CDATES"
 
 NUM_CYCLES="${#ALL_CDATES[@]}"

@@ -51,6 +51,7 @@ run_dir \
 nthreads \
 sub_hourly_post \
 dt_subhourly_post_mnts \
+output_interval \
 dt_atmos \
   )
   process_args valid_args "$@"
@@ -212,7 +213,7 @@ run directory (run_dir):
     nsout=$(( dt_subhourly_post_mnts*60 / dt_atmos ))
     nfhout=0
   else
-    nfhout=1
+    nfhout=${output_interval}
     nsout=-1
   fi
   settings="${settings}
