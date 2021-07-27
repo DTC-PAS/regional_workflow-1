@@ -433,7 +433,6 @@ FV3_CPT_v0:
     mg_qcvar: 1.0
     mg_ts_auto_ice: [180.0, 900.0]
     n_var_lndp: !!python/none
-    ncld: 2
     pdfflag: 4
     random_clds: True
     ras: False

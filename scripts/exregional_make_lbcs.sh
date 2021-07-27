@@ -521,7 +521,9 @@ $settings"
 # environment used by the regional workflow (prepended to your $PATH)
 # and that used in the run environment.
 #-----------------------------------------------------------------------
-  unload_python
+#  EAK: comment out the unload command - it breaks the for loop
+#  during subsequent passes.
+#  unload_python
 
   ${APRUN} ${exec_fp} || \
     print_err_msg_exit "\
