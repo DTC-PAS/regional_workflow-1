@@ -314,7 +314,7 @@ settings="\
   'date_last_cycl': ${DATE_LAST_CYCL}
   'cdate_first_cycl': !datetime ${DATE_FIRST_CYCL}${CYCL_HRS[0]}
   'cycl_hrs': [ $( printf "\'%s\', " "${CYCL_HRS[@]}" ) ]
-  'cycl_freq': ${CYCL_FREQ}
+  'cycl_freq': ${CYCL_FREQ}:00:00
 #
 # Forecast length (same for all cycles).
 #
@@ -345,6 +345,10 @@ settings="\
   'ensmem_indx_name': ${ensmem_indx_name}
   'uscore_ensmem_name': ${uscore_ensmem_name}
   'slash_ensmem_subdir': ${slash_ensmem_subdir}
+#
+# Parameters associated with the post-processor
+#
+  'output_freq': ${OUTPUT_FREQ}
 #
 # Parameters associated with subhourly post-processed output
 #
