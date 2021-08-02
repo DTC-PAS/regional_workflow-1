@@ -414,7 +414,7 @@ case "${EXTRN_MDL_NAME_ICS}" in
     fn_atm="${EXTRN_MDL_FNS[0]}"
     fn_sfc="${EXTRN_MDL_FNS[1]}"
     input_type="gaussian_nemsio"     # For FV3-GFS Gaussian grid in nemsio format.
-    convert_nst=True
+    convert_nst="${CONVERT_NST:-True}"
   elif [ "${FV3GFS_FILE_FMT_ICS}" = "grib2" ]; then
     external_model="GFS"
     fn_grib2="${EXTRN_MDL_FNS[0]}"

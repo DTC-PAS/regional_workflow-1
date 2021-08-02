@@ -109,7 +109,7 @@ later than the last forecast date and time (cdate_max) with this model:
 # CDATE for the FV3GFS to this date and time.
 #  CDATE_min="2019061212"
   CDATE_min="2018121500"
-  if [ "$CDATE" -lt "$CDATE_min" ]; then
+  if [ "$CDATE" -lt "$CDATE_min" ] && [ "$USE_USER_STAGED_EXTRN_FILES" = "FALSE" ]; then
     print_err_msg_exit "\
 Output from the specified external model (EXTRN_MDL_NAME) is not availa-
 ble for the specified cycle date and time (CDATE) because the latter is

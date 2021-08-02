@@ -562,6 +562,10 @@ NDAS_OBS_DIR="/path/to/observation-directory/ndas/proc"
 # EXTRN_MDL_NAME_LBCS is set to "FV3GFS"), this variable specifies the 
 # format of the model files to use when generating the LBCs.
 #
+# CONVERT_NST:
+# Whether to initialize the NSST parameterization. Requires that the
+# input files to MAKE_ICS contain the appropriate output to restart NSST.
+#
 #-----------------------------------------------------------------------
 #
 EXTRN_MDL_NAME_ICS="FV3GFS"
@@ -569,6 +573,7 @@ EXTRN_MDL_NAME_LBCS="FV3GFS"
 LBC_SPEC_INTVL_HRS="6"
 FV3GFS_FILE_FMT_ICS="nemsio"
 FV3GFS_FILE_FMT_LBCS="nemsio"
+CONVERT_NST=TRUE
 #
 #-----------------------------------------------------------------------
 #

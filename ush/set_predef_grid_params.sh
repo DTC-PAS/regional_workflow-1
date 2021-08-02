@@ -1209,6 +1209,95 @@ case ${PREDEF_GRID_NAME} in
     WRTCMP_dlat="0.025" #$( printf "%.9f" $( bc -l <<< "(${ESGgrid_DELY}/${radius_Earth})*${degs_per_radian}" ) )
   fi
   ;;
+
+#
+#-----------------------------------------------------------------------
+#
+# DYNAMO domain with ~13km cell size.
+#
+#-----------------------------------------------------------------------
+#
+"DYNAMO_13km")
+
+  GRID_GEN_METHOD="ESGgrid"
+
+  ESGgrid_LON_CTR="76.0"
+  ESGgrid_LAT_CTR="0.0"
+
+  ESGgrid_DELX="13000.0"
+  ESGgrid_DELY="13000.0"
+
+  ESGgrid_NX="446"
+  ESGgrid_NY="190"
+
+  ESGgrid_WIDE_HALO_WIDTH="6"
+
+  DT_ATMOS="${DT_ATMOS:-45}"
+
+  LAYOUT_X="${LAYOUT_X:-20}"
+  LAYOUT_Y="${LAYOUT_Y:-8}"
+  BLOCKSIZE="${BLOCKSIZE:-32}"
+
+  if [ "$QUILTING" = "TRUE" ]; then
+    WRTCMP_write_groups="1"
+    WRTCMP_write_tasks_per_group="8"
+    WRTCMP_output_grid="regional_latlon"
+    WRTCMP_cen_lon="${ESGgrid_LON_CTR}"
+    WRTCMP_cen_lat="${ESGgrid_LAT_CTR}"
+    WRTCMP_lon_lwr_left="50.0"
+    WRTCMP_lat_lwr_left="-11.0"
+    WRTCMP_lon_upr_rght="102.0"
+    WRTCMP_lat_upr_rght="11.0"
+    WRTCMP_dlon="0.13"
+    WRTCMP_dlat="0.13"
+  fi
+
+  ;;
+
+#
+#-----------------------------------------------------------------------
+#
+# DYNAMO domain with ~3km cell size.
+#
+#-----------------------------------------------------------------------
+#
+"DYNAMO_3km")
+
+  GRID_GEN_METHOD="ESGgrid"
+
+  ESGgrid_LON_CTR="76.0"
+  ESGgrid_LAT_CTR="0.0"
+
+  ESGgrid_DELX="3000.0"
+  ESGgrid_DELY="3000.0"
+
+  ESGgrid_NX="1926"
+  ESGgrid_NY="816"
+
+  ESGgrid_WIDE_HALO_WIDTH="6"
+
+  DT_ATMOS="${DT_ATMOS:-40}"
+
+  LAYOUT_X="${LAYOUT_X:-32}"
+  LAYOUT_Y="${LAYOUT_Y:-15}"
+  BLOCKSIZE="${BLOCKSIZE:-32}"
+
+  if [ "$QUILTING" = "TRUE" ]; then
+    WRTCMP_write_groups="1"
+    WRTCMP_write_tasks_per_group="24"
+    WRTCMP_output_grid="regional_latlon"
+    WRTCMP_cen_lon="${ESGgrid_LON_CTR}"
+    WRTCMP_cen_lat="${ESGgrid_LAT_CTR}"
+    WRTCMP_lon_lwr_left="50.0"
+    WRTCMP_lat_lwr_left="-11.0"
+    WRTCMP_lon_upr_rght="102.0"
+    WRTCMP_lat_upr_rght="11.0"
+    WRTCMP_dlon="0.03"
+    WRTCMP_dlat="0.03"
+  fi
+
+  ;;
+
 esac
 #
 #-----------------------------------------------------------------------
