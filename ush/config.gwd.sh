@@ -29,7 +29,7 @@ FCST_LEN_HRS="60"
 LBC_SPEC_INTVL_HRS="3"
 WTIME_RUN_FCST="07:30:00"
 # Get write component output and run the post every three hours.
-OUTPUT_FREQ="3"
+OUTPUT_FREQ="1"
 
 # Modify the first and last cycle depending on whether you are running warm or cold
 # season cases.

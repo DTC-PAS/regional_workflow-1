@@ -27,7 +27,7 @@ FCST_LEN_HRS="12" # for the actual runs, a 126-hr forecast is desired.
 LBC_SPEC_INTVL_HRS="6"
 WTIME_RUN_FCST="08:00:00" # adjust for 13- versus 3-km runs.
 # Get write component output and run the post every three hours.
-OUTPUT_FREQ="3"
+OUTPUT_FREQ="1"
 
 # Modify the first and last cycle depending on whether you are running warm or cold
 # season cases.

@@ -27,7 +27,7 @@ LBC_SPEC_INTVL_HRS="6"
 # Adjust the forecast walltime as appropriate.
 WTIME_RUN_FCST="08:00:00"
 # Get write component output and run the post every three hours.
-OUTPUT_FREQ="3"
+OUTPUT_FREQ="1"
 
 # Modify the first and last cycle depending on whether you are running warm or cold
 # season cases.
