@@ -1266,6 +1266,8 @@ case ${PREDEF_GRID_NAME} in
   ESGgrid_NX="446"
   ESGgrid_NY="190"
 
+  ESGgrid_PAZI="0.0"
+
   ESGgrid_WIDE_HALO_WIDTH="6"
 
   DT_ATMOS="${DT_ATMOS:-45}"
@@ -1309,6 +1311,8 @@ case ${PREDEF_GRID_NAME} in
 
   ESGgrid_NX="1926"
   ESGgrid_NY="816"
+
+  ESGgrid_PAZI="0.0"
 
   ESGgrid_WIDE_HALO_WIDTH="6"
 
