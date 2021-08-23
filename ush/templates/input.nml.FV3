@@ -36,7 +36,7 @@
     checker_tr = .false.
     filtered_terrain = .true.
     gfs_dwinds = .true.
-    levp = 65
+    levp = 66
     nt_checker = 0
 /
 
@@ -71,11 +71,12 @@
     do_schmidt = .true.
     do_vort_damp = .true.
     dwind_2d = .false.
-    external_eta = .true.
+    external_eta = .false.
     external_ic = .true.
     fill = .true.
     full_zs_filter = .false.
     fv_debug = .false.
+    fv_eta_file = 'global_hyblev_fcst_RRFSL65.txt'
     fv_sg_adj = 300
     gfs_phil = .false.
     hord_dp = 6
@@ -101,7 +102,8 @@
     nggps_ic = .true.
     no_dycore = .false.
     nord = 2
-    npz = 64
+    npz = 65
+    npz_type = 'input'
     nrows_blend = 10
     ntiles = 1
     nudge_qv = .false.
