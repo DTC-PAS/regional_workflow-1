@@ -326,7 +326,6 @@ FV3_GFS_v16:
     tau_v2l: 150.0
   gfs_physics_nml:
     <<: *gfs_v15_gfs_physics
-    cdmbgwd: [4.0, 0.15, 1.0, 1.0]
     do_myjpbl: !!python/none
     do_myjsfc: !!python/none
     do_tofd: True

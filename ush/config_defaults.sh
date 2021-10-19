@@ -1574,6 +1574,14 @@ NUM_ENS_MEMBERS="1"
 #
 #-----------------------------------------------------------------------
 #
+# EAK: Set default physics options that are dependent on grid spacing
+#
+#-----------------------------------------------------------------------
+#
+CDMBGWD="[3.5,0.25]"
+#
+#-----------------------------------------------------------------------
+#
 # Set default ad-hoc stochastic physics options.
 # For detailed documentation of these parameters, see:
 # https://stochastic-physics.readthedocs.io/en/ufs_public_release/namelist_options.html
