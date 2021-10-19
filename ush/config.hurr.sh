@@ -22,6 +22,9 @@ PREEXISTING_DIR_METHOD="rename"
 PREDEF_GRID_NAME="GSL_HAFSV0.A_13km"
 GRID_GEN_METHOD="ESGgrid"
 QUILTING="TRUE"
+# IMPORTANT NOTE: If you are running RRFS physics at 13 km,
+# you should set CCPP_PHYS_SUITE="FV3_RRFS_v1alpha_cumulus",
+# since FV3_RRFS_v1alpha does not have cumulus.
 CCPP_PHYS_SUITE="FV3_GFS_v16"
 FCST_LEN_HRS="12" # for the actual runs, a 126-hr forecast is desired.
 LBC_SPEC_INTVL_HRS="6"

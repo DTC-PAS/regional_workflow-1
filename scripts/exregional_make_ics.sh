@@ -170,6 +170,7 @@ case "${CCPP_PHYS_SUITE}" in
   "FV3_GSD_v0" | \
   "FV3_GSD_SAR" | \
   "FV3_RRFS_v1alpha" | \
+  "FV3_RRFS_v1alpha_cumulus" | \
   "FV3_RRFS_v1beta" | \
   "FV3_HRRR" )
     if [ "${EXTRN_MDL_NAME_ICS}" = "RAP" ] || \

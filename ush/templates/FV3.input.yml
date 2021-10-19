@@ -40,6 +40,17 @@ FV3_RRFS_v1alpha:
     lsm: 2
     lsoil_lsm: 4
 
+FV3_RRFS_v1alpha_cumulus:
+  gfs_physics_nml:
+    <<: *gsd_sar_phys
+    do_deep: True
+    do_mynnsfclay: False
+    imfdeepcnv: 3
+    imfshalcnv: 3
+    lsm: 2
+    lsoil_lsm: 4
+    shal_cnv: True
+
 FV3_RRFS_v1beta:
   gfs_physics_nml:
     <<: *gsd_sar_phys

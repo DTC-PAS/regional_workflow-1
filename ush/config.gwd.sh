@@ -23,6 +23,9 @@ PREEXISTING_DIR_METHOD="rename"
 PREDEF_GRID_NAME="RRFS_CONUS_13km"
 GRID_GEN_METHOD="ESGgrid"
 QUILTING="TRUE"
+# IMPORTANT NOTE: If you are running RRFS physics at 13 km,
+# you should set CCPP_PHYS_SUITE="FV3_RRFS_v1alpha_cumulus",
+# since FV3_RRFS_v1alpha does not have cumulus.
 CCPP_PHYS_SUITE="FV3_GFS_v16"
 #GWD_HRRRsuite_BASEDIR="/work/noaa/gsd-fv3-dev/gsketefia/UFS/FV3LAM_pregen/RRFS_CONUS_3km"
 FCST_LEN_HRS="60"
