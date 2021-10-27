@@ -296,6 +296,8 @@
 "gfs_phys",    "CLDFRA_BL",    "cldfra_bl",     "fv3_history",    "all",  .false.,  "none",  2
 "gfs_phys",    "EL_PBL",       "el_pbl",        "fv3_history",    "all",  .false.,  "none",  2
 "gfs_phys",    "QKE",          "qke",           "fv3_history",    "all",  .false.,  "none",  2
+"gfs_phys",    "dkt",          "dkt",           "fv3_history",    "all",  .false.,  "none",  2
+"gfs_phys",    "dku",          "dku",           "fv3_history",    "all",  .false.,  "none",  2
 "gfs_sfc",     "maxmf",        "maxmf",         "fv3_history2d",  "all",  .false.,  "none",  2
 #"gfs_sfc",     "nupdraft",     "nupdrafts",     "fv3_history2d",  "all",  .false.,  "none",  2
 #"gfs_sfc",     "ktop_shallow", "ktop_shallow",  "fv3_history2d",  "all",  .false.,  "none",  2
