@@ -123,6 +123,9 @@ case ${PREDEF_GRID_NAME} in
   BLOCKSIZE="${BLOCKSIZE:-40}"
 
   CDMBGWD="[1.1,0.72,1.0,1.0]"
+  if [ "$CCPP_PHYS_SUITE" != "FV3_GFS_v16" ]; then
+    DO_GSL_DRAG_LS_BL="True"
+  fi
 
   if [ "$QUILTING" = "TRUE" ]; then
     WRTCMP_write_groups="1"
@@ -171,6 +174,9 @@ case ${PREDEF_GRID_NAME} in
   BLOCKSIZE="${BLOCKSIZE:-32}"
 
   CDMBGWD="[4.0,0.15,1.0,1.0]"
+  if [ "$CCPP_PHYS_SUITE" != "FV3_GFS_v16" ]; then
+    DO_GSL_DRAG_LS_BL="True"
+  fi
 
   if [ "$QUILTING" = "TRUE" ]; then
     WRTCMP_write_groups="1"
@@ -219,6 +225,7 @@ case ${PREDEF_GRID_NAME} in
   BLOCKSIZE="${BLOCKSIZE:-32}"
 
   CDMBGWD="[0.88,0.04,1.0,1.0]"
+  DO_GSL_DRAG_LS_BL="False"
 
   if [ "$QUILTING" = "TRUE" ]; then
     WRTCMP_write_groups="1"
@@ -971,6 +978,9 @@ case ${PREDEF_GRID_NAME} in
   BLOCKSIZE="${BLOCKSIZE:-6}"
 
   CDMBGWD="[1.1,0.72,1.0,1.0]"
+  if [ "$CCPP_PHYS_SUITE" != "FV3_GFS_v16" ]; then
+    DO_GSL_DRAG_LS_BL="True"
+  fi
 
   if [ "$QUILTING" = "TRUE" ]; then
     WRTCMP_write_groups="1"
@@ -1017,6 +1027,9 @@ case ${PREDEF_GRID_NAME} in
   BLOCKSIZE="${BLOCKSIZE:-35}"
 
   CDMBGWD="[4.0,0.15,1.0,1.0]"
+  if [ "$CCPP_PHYS_SUITE" != "FV3_GFS_v16" ]; then
+    DO_GSL_DRAG_LS_BL="True"
+  fi
 
   if [ "$QUILTING" = "TRUE" ]; then
     WRTCMP_write_groups="1"
@@ -1063,6 +1076,7 @@ case ${PREDEF_GRID_NAME} in
   BLOCKSIZE="${BLOCKSIZE:-32}"
 
   CDMBGWD="[0.88,0.04,1.0,1.0]"
+  DO_GSL_DRAG_LS_BL="False"
 
   if [ "$QUILTING" = "TRUE" ]; then
     WRTCMP_write_groups="1"
@@ -1289,6 +1303,9 @@ case ${PREDEF_GRID_NAME} in
   BLOCKSIZE="${BLOCKSIZE:-32}"
 
   CDMBGWD="[4.0,0.15,1.0,1.0]"
+  if [ "$CCPP_PHYS_SUITE" != "FV3_GFS_v16" ]; then
+    DO_GSL_DRAG_LS_BL="True"
+  fi
 
   if [ "$QUILTING" = "TRUE" ]; then
     WRTCMP_write_groups="1"
@@ -1337,6 +1354,7 @@ case ${PREDEF_GRID_NAME} in
   BLOCKSIZE="${BLOCKSIZE:-32}"
 
   CDMBGWD="[0.88,0.04,1.0,1.0]"
+  DO_GSL_DRAG_LS_BL="False"
 
   if [ "$QUILTING" = "TRUE" ]; then
     WRTCMP_write_groups="1"

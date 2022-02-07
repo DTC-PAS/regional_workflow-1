@@ -357,6 +357,125 @@ FV3_GFS_v16:
     ldebug: False
   surf_map_nml: !!python/none
 
+FV3_GFS_v16_coupled_nsstNoahmpUGWPv1:
+  cires_ugwp_nml:
+    knob_ugwp_dokdis: 2
+    knob_ugwp_lhmet: 200000
+    knob_ugwp_lzmax: 15750
+    knob_ugwp_lzmin: 750
+    knob_ugwp_lzstar: 2000
+    knob_ugwp_ndx4lh: 4
+    knob_ugwp_nslope: 1
+    knob_ugwp_orosolv: 'pss-1986'
+    knob_ugwp_palaunch: 27500
+    knob_ugwp_tauamp: 0.003
+    knob_ugwp_taumin: 0.00025
+    knob_ugwp_version: 1
+    launch_level: !!python/none
+  fv_core_nml:
+    <<: *gfs_v15_fv_core
+    agrid_vel_rst: false
+    d2_bg_k1: 0.2
+    d2_bg_k2: 0.0
+    fv_sg_adj: 450
+    hord_dp: -5
+    hord_mt: 5
+    hord_tm: 5
+    hord_vt: 5
+    k_split: 6
+    make_nh: false
+    n_split: 6
+    n_sponge: 10
+    na_init: 0
+    nudge_dz: False
+    res_latlon_dynamics: ''
+    rf_fast: !!python/none
+    tau: 10.0
+  gfdl_cloud_microphysics_nml:
+    <<: *gfs_gfdl_cloud_mp
+    mp_time: 150.0
+    reiflag: 2
+    sedi_transport: True
+    tau_l2v: 225.0
+    tau_v2l: 150.0
+  gfs_physics_nml:
+    <<: *gfs_v15_gfs_physics
+    bl_mynn_edmf: 1
+    bl_mynn_edmf_mom: 1
+    bl_mynn_tkeadvect: True
+    ca_sgs: False
+    ca_trigger: False
+    cplchm: False
+    cplflx: False
+    cplwav: False
+    cplwav2atm: False
+    do_ca: False
+    do_gsl_drag_ss: True
+    do_gsl_drag_tofd: True
+    do_myjpbl: !!python/none
+    do_myjsfc: !!python/none
+    do_mynnedmf: False
+    do_mynnsfclay: False
+    do_skeb: False
+    do_sppt: False
+    do_tofd: False
+    do_ugwp_v0: False
+    do_ugwp_v1: True
+    do_ugwp_v1_orog_only: False
+    do_ysu: !!python/none
+    frac_grid: False
+    gwd_opt: 2
+    hybedmf: False
+    iaer: 5111
+    ialb: 2
+    icliq_sw: 2
+    icloud_bl: 1
+    iems: 2
+    iopt_alb: 1
+    iopt_crs: 2
+    iopt_dveg: 4
+    iopt_rad: 3
+    iopt_stc: 3
+    iovr: 3
+    isatmedmf: 1
+    iseed_ca: 1670739118
+    ldiag_ugwp: True
+    lgfdlmprad: True
+    lheatstrg: True
+    lradar: False
+    lseaspray: True
+    lndp_type: !!python/none
+    lsm: 2
+    lsoil: 4
+    ltaerosol: False
+    min_lakeice: 0.15
+    min_seaice: 1.0e-11
+    nca: 1
+    nfracseed: 0.5
+    n_var_lndp: !!python/none
+    nseed: 1
+    nspinup: 1
+    nsradar_reset: !!python/none
+    nstf_name: [2, 1, 0, 0, 0]
+    prautco: [0.00015, 0.00015]
+    psautco: [0.0008, 0.0005]
+    rcell: 0.72
+    satmedmf: True
+    scells: 5000
+    shinhong: !!python/none
+    tlives: 3600
+    ttendlim: 0.005
+    xkzminv: !!python/none
+    xkzm_m: !!python/none
+    xkzm_h: !!python/none
+  mpp_io_nml:
+    deflate_level: 1
+    shuffle: 1
+  namsfc:
+    landice: True
+    ldebug: False
+  surf_map_nml: !!python/none
+
 FV3_CPT_v0:
   fv_core_nml:
     <<: *gfs_v15_fv_core

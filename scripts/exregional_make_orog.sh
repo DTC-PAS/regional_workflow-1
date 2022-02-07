@@ -321,7 +321,7 @@ mv_vrfy "${raw_orog_fp_orig}" "${raw_orog_fp}"
 #
 #-----------------------------------------------------------------------
 #
-if [ "${CCPP_PHYS_SUITE}" = "FV3_HRRR" ]; then
+if [ "${CCPP_PHYS_SUITE}" = "FV3_HRRR" ] || [ "${CCPP_PHYS_SUITE}" = "FV3_GFS_v16_coupled_nsstNoahmpUGWPv1" ] ; then
   tmp_dir="${OROG_DIR}/temp_orog_data"
   mkdir_vrfy -p ${tmp_dir}
   cd_vrfy ${tmp_dir}

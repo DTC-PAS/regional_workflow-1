@@ -1358,6 +1358,7 @@ FIXgsm_FILES_TO_COPY_TO_FIXam=( \
 "global_solarconstant_noaa_an.txt" \
 "geo_em.d01.lat-lon.2.5m.HGT_M.nc" \
 "HGT.Beljaars_filtered.lat-lon.30s_res.nc" \
+"ugwp_limb_tau.nc" \
 "replace_with_FIXgsm_ozone_prodloss_filename" \
 )
 
@@ -1409,6 +1410,7 @@ CYCLEDIR_LINKS_TO_FIXam_FILES_MAPPING=( \
 "global_zorclim.1x1.grb     | global_zorclim.1x1.grb" \
 "sfc_emissivity_idx.txt     | global_sfc_emissivity_idx.txt" \
 "solarconstant_noaa_an.txt  | global_solarconstant_noaa_an.txt" \
+"ugwp_limb_tau.nc           | ugwp_limb_tau.nc" \
 "global_o3prdlos.f77        | " \
 )
 #
@@ -1579,6 +1581,7 @@ NUM_ENS_MEMBERS="1"
 #-----------------------------------------------------------------------
 #
 CDMBGWD="[3.5,0.25]"
+DO_GSL_DRAG_LS_BL="False"
 #
 #-----------------------------------------------------------------------
 #

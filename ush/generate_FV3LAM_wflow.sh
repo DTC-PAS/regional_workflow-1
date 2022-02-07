@@ -668,6 +668,7 @@ settings="\
     'do_sppt': ${DO_SPPT},
     'do_skeb': ${DO_SKEB},
     'cdmbgwd': ${CDMBGWD},
+    'do_gsl_drag_ls_bl': ${DO_GSL_DRAG_LS_BL},
   }
 'nam_stochy': {
     'shum': ${SHUM_MAG},
