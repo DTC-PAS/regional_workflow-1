@@ -245,7 +245,7 @@ Creating links in the FIXLAM directory to the grid files..."
     "C*${DOT_OR_USCORE}oro_data.tile${TILE_RGNL}.halo${NH0}.nc" \
     "C*${DOT_OR_USCORE}oro_data.tile${TILE_RGNL}.halo${NH4}.nc" \
         )
-    if [ "${CCPP_PHYS_SUITE}" = "FV3_HRRR" ]; then
+    if [ "${CCPP_PHYS_SUITE}" = "FV3_HRRR" .or. "${CCPP_PHYS_SUITE}" = "FV3_GFS_v17_p8" ]; then
       fns+=( \
       "C*${DOT_OR_USCORE}oro_data_ss.tile${TILE_RGNL}.halo${NH0}.nc" \
       "C*${DOT_OR_USCORE}oro_data_ls.tile${TILE_RGNL}.halo${NH0}.nc" \

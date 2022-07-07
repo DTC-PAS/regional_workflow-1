@@ -173,6 +173,15 @@ def link_fix(verbose, file_group):
                ]
         fps=[ os.path.join(OROG_DIR,itm) for itm in fns]
         run_task=f"{RUN_TASK_MAKE_OROG}"
+
+        if CCPP_PHYS_SUITE == "FV3_GFS_v17_p8":
+          fns+=[
+          f"C*{DOT_OR_USCORE}oro_data_ss.tile{TILE_RGNL}.halo{NH0}.nc",
+          f"C*{DOT_OR_USCORE}oro_data_ls.tile{TILE_RGNL}.halo{NH0}.nc",
+               ]
+        fps=[ os.path.join(OROG_DIR,itm) for itm in fns]
+        run_task=f"{RUN_TASK_MAKE_OROG}"
+
     #
     # The following list of symlinks (which have the same names as their
     # target files) need to be created made in order for the make_ics and
