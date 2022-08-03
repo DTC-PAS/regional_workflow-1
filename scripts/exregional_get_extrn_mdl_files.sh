@@ -94,7 +94,7 @@ if [ "${ICS_OR_LBCS}" = "ICS" ]; then
   if [ ${extrn_mdl_name} = FV3GFS ] ; then
     file_type=$FV3GFS_FILE_FMT_ICS
   fi
-  input_file_path=${EXTRN_MDL_SOURCE_BASEDIR_ICS:-$EXTRN_MDL_SYSBASEDIR_ICS}
+  input_file_path=${EXTRN_MDL_SOURCE_BASEDIR_ICS:-$EXTRN_MDL_SYSBASEDIR_ICS}/${extrn_mdl_cdate}
 
 elif [ "${ICS_OR_LBCS}" = "LBCS" ]; then
   anl_or_fcst="fcst"
@@ -105,7 +105,7 @@ elif [ "${ICS_OR_LBCS}" = "LBCS" ]; then
   if [ ${extrn_mdl_name} = FV3GFS ] ; then
     file_type=$FV3GFS_FILE_FMT_LBCS
   fi
-  input_file_path=${EXTRN_MDL_SOURCE_BASEDIR_LBCS:-$EXTRN_MDL_SYSBASEDIR_LBCS}
+  input_file_path=${EXTRN_MDL_SOURCE_BASEDIR_LBCS:-$EXTRN_MDL_SYSBASEDIR_LBCS}/${extrn_mdl_cdate}
 fi
 
 data_stores="${EXTRN_MDL_DATA_STORES}"
