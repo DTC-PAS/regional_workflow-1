@@ -241,7 +241,7 @@ create_symlink_to_file target="$target" symlink="$symlink" \
 # that the FV3 model is hardcoded to recognize, and those are the names 
 # we use below.
 #
-if [ "${CCPP_PHYS_SUITE}" = "FV3_HRRR" .or. "${CCPP_PHYS_SUITE}" = "FV3_GFS_v17_p8"  ]; then
+if [ "${CCPP_PHYS_SUITE}" = "FV3_HRRR" ]; then
 
   fileids=( "ss" "ls" )
   for fileid in "${fileids[@]}"; do
@@ -252,6 +252,20 @@ if [ "${CCPP_PHYS_SUITE}" = "FV3_HRRR" .or. "${CCPP_PHYS_SUITE}" = "FV3_GFS_v17_
   done
 
 fi
+
+#zhang
+if [ "${CCPP_PHYS_SUITE}" = "FV3_GFS_v17_p8"  ]; then
+
+  fileids=( "ss" "ls" )
+  for fileid in "${fileids[@]}"; do
+    target="${FIXLAM}/${CRES}${DOT_OR_USCORE}oro_data_${fileid}.tile${TILE_RGNL}.halo${NH0}.nc"
+    symlink="oro_data_${fileid}.nc"
+    create_symlink_to_file target="$target" symlink="$symlink" \
+                           relative="${relative_link_flag}"
+  done
+
+fi
+
 
 #
 #-----------------------------------------------------------------------

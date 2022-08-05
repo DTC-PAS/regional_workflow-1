@@ -274,7 +274,7 @@ mv_vrfy "${raw_orog_fp_orig}" "${raw_orog_fp}"
 #
 #-----------------------------------------------------------------------
 #
-if [ "${CCPP_PHYS_SUITE}" = "FV3_HRRR" .or. "${CCPP_PHYS_SUITE}" = "FV3_GFS_v17_p8" ]; then
+if [ "${CCPP_PHYS_SUITE}" = "FV3_HRRR" ]; then
   tmp_dir="${OROG_DIR}/temp_orog_data"
   mkdir_vrfy -p ${tmp_dir}
   cd_vrfy ${tmp_dir}
@@ -323,6 +323,58 @@ returned with nonzero exit code:
           "${OROG_DIR}"
  
 fi
+
+#zhang
+if [ "${CCPP_PHYS_SUITE}" = "FV3_GFS_v17_p8" ]; then
+  tmp_dir="${OROG_DIR}/temp_orog_data"
+  mkdir_vrfy -p ${tmp_dir}
+  cd_vrfy ${tmp_dir}
+  mosaic_fn_gwd="${CRES}${DOT_OR_USCORE}mosaic.halo${NH4}.nc"
+  mosaic_fp_gwd="$FIXLAM/${mosaic_fn_gwd}"
+  grid_fn_gwd=$( get_charvar_from_netcdf "${mosaic_fp_gwd}" "gridfiles" ) || \
+    print_err_msg_exit "get_charvar_from_netcdf function failed."
+  grid_fp_gwd="${FIXLAM}/${grid_fn_gwd}"
+  ls_fn="geo_em.d01.lat-lon.2.5m.HGT_M.nc"
+  ss_fn="HGT.Beljaars_filtered.lat-lon.30s_res.nc"
+  create_symlink_to_file target="${grid_fp_gwd}" symlink="${tmp_dir}/${grid_fn_gwd}" \
+                         relative="TRUE"
+  create_symlink_to_file target="${FIXam}/${ls_fn}" symlink="${tmp_dir}/${ls_fn}" \
+                         relative="TRUE"
+  create_symlink_to_file target="${FIXam}/${ss_fn}" symlink="${tmp_dir}/${ss_fn}" \
+                         relative="TRUE"
+
+  input_redirect_fn="grid_info.dat"
+  cat > "${input_redirect_fn}" <<EOF
+${TILE_RGNL}
+${CRES:1}
+${NH4}
+EOF
+
+  exec_fn="orog_gsl"
+  exec_fp="$EXECDIR/${exec_fn}"
+  if [ ! -f "${exec_fp}" ]; then
+    print_err_msg_exit "\
+The executable (exec_fp) for generating the GSL orography GWD data files
+does not exist:
+  exec_fp = \"${exec_fp}\"
+Please ensure that you've built this executable."
+  fi
+
+  print_info_msg "$VERBOSE" "
+Starting orography file generation..."
+
+  ${RUN_CMD_SERIAL} "${exec_fp}" < "${input_redirect_fn}" || \
+      print_err_msg_exit "\
+Call to executable (exec_fp) that generates the GSL orography GWD data files
+returned with nonzero exit code:
+  exec_fp = \"${exec_fp}\""
+
+  mv_vrfy "${CRES}${DOT_OR_USCORE}oro_data_ss.tile${TILE_RGNL}.halo${NH0}.nc" \
+          "${CRES}${DOT_OR_USCORE}oro_data_ls.tile${TILE_RGNL}.halo${NH0}.nc" \
+          "${OROG_DIR}"
+
+fi
+
 #
 #-----------------------------------------------------------------------
 #
