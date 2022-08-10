@@ -438,6 +438,13 @@ create_symlink_to_file target="${FIELD_DICT_FP}" \
                        symlink="${run_dir}/${FIELD_DICT_FN}" \
                        relative="${relative_link_flag}"
 
+# EAK: Link the file that contains the L65 configuration into
+# the run directory. Will only be used if the input.nml
+# specifies fv_eta_file = 'global_hyblev_fcst_RRFSL65.txt' 
+create_symlink_to_file target="${USHDIR}/templates/global_hyblev_fcst_RRFSL65.txt" \
+                       symlink="${run_dir}" \
+                       relative="${relative_link_flag}"
+
 if [ ${WRITE_DOPOST} = "TRUE" ]; then
   cp_vrfy ${UPP_DIR}/parm/nam_micro_lookup.dat ./eta_micro_lookup.dat
   if [ ${USE_CUSTOM_POST_CONFIG_FILE} = "TRUE" ]; then
