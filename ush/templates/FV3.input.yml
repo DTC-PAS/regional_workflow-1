@@ -374,6 +374,7 @@ FV3_GFS_v17_p8:
     res_latlon_dynamics: ''
     rf_fast: !!python/none
     tau: 10.0
+    dnats: 0
   gfs_physics_nml:
     <<: *RRFS_v1alpha_phys
     cdmbgwd: [4.0,0.15,1.0,1.0]

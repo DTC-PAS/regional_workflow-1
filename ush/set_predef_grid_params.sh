@@ -347,7 +347,7 @@ function set_predef_grid_params() {
 
     __esggrid_wide_halo_width__="6"
 
-    __dt_atmos__="${dt_atmos:-45}"
+    __dt_atmos__="${dt_atmos:-36}"
 
     __layout_x__="${layout_x:-16}"
     __layout_y__="${layout_y:-10}"
