@@ -352,32 +352,9 @@ FV3_GFS_v15_thompson_mynn_lam3km:
     xkzm_h: 1.0
 
 FV3_GFS_v17_p8:
-  cires_ugwp_nml:
-    launch_level: 27
-  fv_core_nml:
-    <<: *gfs_v15_fv_core
-    dnats: 0
-    agrid_vel_rst: true
-    d2_bg_k1: 0.2
-    d2_bg_k2: 0.0
-    fv_sg_adj: 450
-    hord_dp: -5
-    hord_mt: 5
-    hord_tm: 5
-    hord_vt: 5
-    k_split: 6
-    make_nh: false
-    n_split: 6
-    n_sponge: 10
-    na_init: 0
-    nudge_dz: False
-    res_latlon_dynamics: ''
-    rf_fast: !!python/none
-    tau: 10.0
-    do_sat_adj: False
   gfs_physics_nml:
     <<: *RRFS_v1alpha_phys
-    cdmbgwd: [4.0,0.15,1.0,1.0]
+    cdmbgwd: [0.14,1.8,1.0,1.0]
     satmedmf: true
     isatmedmf: 1
     do_deep: true
