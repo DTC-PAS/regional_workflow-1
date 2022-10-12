@@ -400,6 +400,7 @@ FV3_GFS_v17_p8:
     icliq_sw: 2
     imfdeepcnv: 2
     imfshalcnv: 2
+    progsigma: true
     iopt_alb: 1
     iopt_btr: 1
     iopt_crs: 2
